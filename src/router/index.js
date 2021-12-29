@@ -1,26 +1,41 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/Login.vue"),
+    redirect: { name: "LoginIndex" },
+    children: [
+      {
+        path: "index",
+        name: "LoginIndex",
+        component: () => import("../views/login/Index.vue"),
+        meta: { title: "欢迎使用蓝色星合", requiresAuth: false },
+      },
+      {
+        path: "register",
+        name: "LoginRegister",
+        component: () => import("../views/login/Register.vue"),
+        meta: { title: "免费注册蓝色星合", requiresAuth: false },
+      },
+      {
+        path: "forget",
+        name: "LoginForget",
+        component: () => import("../views/login/Forget.vue"),
+        meta: { title: "忘记密码", requiresAuth: false },
+      },
+    ],
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.beforeEach((to) => {
+  document.title = to.meta.title || process.env.VUE_APP_TITLE;
 });
 
 export default router;

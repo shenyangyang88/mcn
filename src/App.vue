@@ -1,30 +1,55 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <a-config-provider :autoInsertSpaceInButton="false" :locale="locale">
+    <router-view />
+  </a-config-provider>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+<script>
+import { defineComponent } from "vue";
+import zhCN from "ant-design-vue/es/locale/zh_CN";
+import dayjs from "dayjs";
+import "dayjs/locale/zh-cn";
+
+// 时间组件国际化
+dayjs.locale("zh-cn");
+
+export default defineComponent({
+  data() {
+    return {
+      locale: zhCN, // antd vue 国际化
+    };
+  },
+});
+</script>
+
+<style>
+html {
+  display: flex;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+html,
+body {
+  min-width: 1280px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+#app .xh_block {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 </style>
