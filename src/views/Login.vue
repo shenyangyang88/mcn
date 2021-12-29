@@ -28,13 +28,11 @@
 
 .login_sub_title {
   font-size: 12px;
-  font-weight: 400;
   line-height: 17px;
   color: rgba(0, 0, 0, 0.25);
 }
 
 /* 重置 antd vue input 样式 */
-
 .ant-form-item-control-input {
   width: 324px;
 }
@@ -54,17 +52,47 @@
 
 .ant-input {
   padding: 8px 11px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   font-size: 16px;
   line-height: 22px;
 }
 
-.ant-select-single:not(.ant-select-customize-input) {
+.ant-select {
   font-size: 16px;
   line-height: 22px;
 }
 
-.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+.ant-select-item {
+  margin-bottom: 4px;
+}
+
+.ant-select-dropdown {
+  padding: 8px 0;
+  border-radius: 6px;
+}
+
+.ant-select-selection-overflow {
+  padding-left: 3px;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+  margin: 0 4px;
+  padding: 0 12px;
+  border-radius: 14px;
+  background: rgba(62, 30, 189, 0.08);
+}
+
+.ant-select-multiple .ant-select-selection-item-content {
+  font-size: 12px;
+}
+
+.ant-select-multiple .ant-select-selection-search {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
   height: 40px;
   border-radius: 6px;
 }

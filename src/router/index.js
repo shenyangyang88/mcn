@@ -27,6 +27,26 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/",
+    name: "Index",
+    component: () => import("../views/Index.vue"),
+    redirect: { name: "Home" },
+    children: [
+      {
+        path: "home",
+        name: "Home",
+        component: () => import("../views/index/Home.vue"),
+        meta: { title: "首页概览", requiresAuth: true },
+      },
+      {
+        path: "talent",
+        name: "Talent",
+        component: () => import("../views/index/talent/Talent.vue"),
+        meta: { title: "达人管理", requiresAuth: true },
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

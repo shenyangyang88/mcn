@@ -8,6 +8,10 @@ import {
   Input,
   Button,
   Select,
+  Menu,
+  Card,
+  Avatar,
+  Table,
 } from "ant-design-vue";
 /**
  * antd vue 插件
@@ -25,6 +29,10 @@ export default class AntdVuePlugin {
       .use(Form)
       .use(Input)
       .use(Button)
-      .use(Select);
+      .use(Select)
+      .use(Menu)
+      .use(Card)
+      .use(Avatar)
+      .use(Table);
   }
 }

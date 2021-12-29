@@ -19,7 +19,7 @@
               padding: '0',
               fontSize: '12px',
               fontWeight: '500',
-              lineHeight: '17px',
+              lineHeight: '15px',
             }"
             >发送验证码</a-button
           >
@@ -38,7 +38,7 @@
         placeholder="新密码由6-20位数字和字母组合"
       ></a-input-password>
     </a-form-item>
-    <a-form-item :style="{ paddingTop: '16px', marginBottom: '16px' }">
+    <a-form-item :style="{ paddingTop: '16px', marginBottom: '10px' }">
       <a-button
         type="primary"
         shape="round"
@@ -51,10 +51,7 @@
     </a-form-item>
     <a-row justify="end" align="middle">
       <a-col>
-        <a-button
-          type="link"
-          :style="{ height: '20px', padding: '0' }"
-          @click="toLogin"
+        <a-button type="link" :style="{ padding: '0' }" @click="toLogin"
           >登录已有账号</a-button
         >
       </a-col>
