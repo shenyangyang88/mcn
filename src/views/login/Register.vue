@@ -144,7 +144,6 @@ export default defineComponent({
           trigger: "change",
         },
       ],
-      code: [{ required: true, message: "请输入验证码", trigger: "change" }],
     };
 
     const toLogin = () => {

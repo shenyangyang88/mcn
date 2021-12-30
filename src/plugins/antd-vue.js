@@ -12,6 +12,9 @@ import {
   Card,
   Avatar,
   Table,
+  Badge,
+  Tooltip,
+  Modal,
 } from "ant-design-vue";
 /**
  * antd vue 插件
@@ -33,6 +36,9 @@ export default class AntdVuePlugin {
       .use(Menu)
       .use(Card)
       .use(Avatar)
-      .use(Table);
+      .use(Table)
+      .use(Badge)
+      .use(Tooltip)
+      .use(Modal);
   }
 }
